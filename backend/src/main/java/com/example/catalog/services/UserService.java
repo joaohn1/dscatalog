@@ -5,6 +5,7 @@ import java.util.Optional;
 import com.example.catalog.dto.RoleDTO;
 import com.example.catalog.dto.UserDTO;
 import com.example.catalog.dto.UserInsertDTO;
+import com.example.catalog.dto.UserUpdateDTO;
 import com.example.catalog.entities.Role;
 import com.example.catalog.entities.User;
 import com.example.catalog.repositories.RoleRepository;
@@ -57,7 +58,7 @@ public class UserService{
     }
 
     @Transactional
-    public UserDTO update(Long id, UserDTO dto) {
+    public UserDTO update(Long id, UserUpdateDTO dto) {
         try {
             User entity = repository.getOne(id);
             copyDtoToEntity(dto, entity);
